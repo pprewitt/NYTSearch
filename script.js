@@ -1,9 +1,9 @@
     $(document).ready(function(){
 
-var search = "";
-var numRecords = 0;
-var startYear = 0;
-var endYear = 0;  
+var search = $("#search").val().trim();
+var numRecords = $("#numRecords").val();
+var startYear = $("startYear").val();
+var endYear = $("#endYear").val();  
     
     // This is our API key. Add your own API key between the ""
     var APIKey = "wdC2mcsgCZbxKVDBM8v7mr5cwP2Bw9Xx";
@@ -16,8 +16,8 @@ var endYear = 0;
     $.ajax({
         url: queryURL,
         method: "GET"
-    }).done(function(NYTData) {
-        console.log(NYTData);
+    }).done(function(response) {
+        console.log(response);
       });
 
     });
